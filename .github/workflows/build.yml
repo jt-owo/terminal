@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: ['src/**']
+  pull_request:
+    branches: [ "main" ]
+    paths: ['src/**']
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: make
+      run: make
